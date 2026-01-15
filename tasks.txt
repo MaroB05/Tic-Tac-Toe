@@ -1,0 +1,4 @@
+[x] create a grid
+[x] let each player make a move
+[x] check for winning
+[x] check for a draw
