@@ -6,7 +6,6 @@ using namespace std;
 class Grid{
 private:
   int grid[3][3] = {0};
-  int sums[8] = {0};
   char rendered_grid[3][7] = {' '};
 
 public:
