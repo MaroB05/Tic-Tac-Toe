@@ -1,4 +1,5 @@
 compile:
+	mkdir -p build
 	g++ -W src/main.cpp -o ./build/xo.out
 
 run:
