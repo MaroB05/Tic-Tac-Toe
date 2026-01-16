@@ -7,9 +7,19 @@ class Grid{
 private:
   int grid[3][3] = {0};
   int sums[8] = {0};
-  string rendered_grid = " | | \n | | \n | | \n";
+  char rendered_grid[3][7] = {' '};
 
 public:
+
+  Grid(){
+    for (int i = 0; i < 3; i++){
+      for (int j = 1; j < 5; j += 2){
+        rendered_grid[i][j-1] = ' ';
+        rendered_grid[i][j] = '|';
+      }
+      rendered_grid[i][6] = '\0';
+    }
+  }
 
   bool is_valid_cell(int r, int c){
     if (r > 2 || r < 0){
@@ -83,15 +93,17 @@ public:
       for (int j = 0; j < 3; j++){
         switch(grid[i][j]){
           case 1:
-            rendered_grid[i * 6 + 2*j] = 'x';
+            rendered_grid[i][2 * j] = 'x';
             break;
           case 2:
-            rendered_grid[i * 6 + 2*j] = 'o';
+            rendered_grid[i][2 * j] = 'o';
             break;
         }
       }
     }
-    cout << rendered_grid << "\n";
+
+    for (int i = 0; i < 3; i++)
+      cout << rendered_grid[i] << "\n";
   }
 
 };
