@@ -1,14 +1,15 @@
+filename=xo.out
 compile:
 	mkdir -p build
-	g++ -W src/main.cpp -o ./build/xo.out
+	g++ -W src/main.cpp -o ./build/$(filename)
 
 run:
-	./build/xo.out
+	./build/$(filename)
 
 debug:
-	g++ src/main.cpp -go ./build/xo.out
-	gdb ./build/xo.out
+	g++ src/main.cpp -g -o ./build/$(filename)
+	gdb ./build/$(filename)
 
 memdebug:
-	g++ src/main.cpp -go ./build/xo.out
-	valgrind ./build/xo.out
+	g++ src/main.cpp -g -o ./build/$(filename)
+	valgrind ./build/$(filename)
